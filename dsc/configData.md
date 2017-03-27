@@ -30,7 +30,7 @@ Configuration MyDscConfiguration {
         }
         
     }
-    Node $AllNodes.Where($_.Role -eq "VMHost").NodeName
+    Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
         WindowsFeature HyperVInstall {
             Ensure = 'Present'
